@@ -1,24 +1,3 @@
-import React, { Component } from 'react';
-import './App.css';
-
-class App extends Component {
-  render() {
-    return (
-
-    );
-  }
-}
-
-export default App;
-```
-
-</details>
-
-<details>
-
-<summary> <code> App.css </code> </summary>
-
-```css
 body {
   margin: 0;
   padding: 0;
@@ -163,4 +142,3 @@ body {
   width: 325px;
   height: 33px;
 }
-```
