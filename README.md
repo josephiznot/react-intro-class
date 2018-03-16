@@ -24,7 +24,7 @@ In this step we will modify the first component `create-react-app` makes for us.
 
 * Open `src/App.js`.
 * Delete all the content in the `return` statement in the `render` method.
-* Remove all content from `App.css` and paste in the solution. ( Found below ) 
+* Remove all content from `App.css` and paste in the solution. ( Found below )
 
 <details>
 
@@ -208,16 +208,12 @@ In this step we will create our `Calculator` component that will render in our c
 
 ### Instructions
 
-
 * Create a folder called `components` inside of the `src` folder. (`app/src`)
 * Create a folder called `Calculator` inside of the `components` folder. ( `app/src/components` )
 * Create a file called `Caclulator.js` inside of the `Calculator` folder you just created.
-<!--This is where i left off
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  <!--This is where i left off
 
-
-
-
+---
 
 -->
 
@@ -225,45 +221,51 @@ In this step we will create our `Calculator` component that will render in our c
 * Import the calculator image from the root directory. ( hint: `import varName from "picturepath.png"` )
   * Call your variable `calculatorImg`.
 * Paste the following `JSX` layout inside the render method of the `Calculator` component. ( Found below )
+
   * <details>
-    
+
     <summary> <code> JSX Layout </code> </summary>
 
     ```jsx
     return (
       <div id="calculator-container">
-        <input id="header-input"/>
+        <input id="header-input" />
         <h1 id="header"> Calculator </h1>
-        <img className="remove-highlight" src={calculatorImg} alt="calculator" />
+        <img
+          className="remove-highlight"
+          src={calculatorImg}
+          alt="calculator"
+        />
         <div id="calculator-mask" className="remove-highlight">
           <div className="output">
-            <span className="total"></span>
+            <span className="total" />
           </div>
 
-          <div className="btn clear"></div>
+          <div className="btn clear" />
 
-          <div className="btn zero"></div>
-          <div className="btn one"></div>
-          <div className="btn two"></div>
-          <div className="btn three"></div>
-          <div className="btn four"></div>
-          <div className="btn five"></div>
-          <div className="btn six"></div>
-          <div className="btn seven"></div>
-          <div className="btn eight"></div>
-          <div className="btn nine"></div>
+          <div className="btn zero" />
+          <div className="btn one" />
+          <div className="btn two" />
+          <div className="btn three" />
+          <div className="btn four" />
+          <div className="btn five" />
+          <div className="btn six" />
+          <div className="btn seven" />
+          <div className="btn eight" />
+          <div className="btn nine" />
 
-          <div className="btn equal"></div>
-          <div className="btn multiply"></div>
-          <div className="btn divide"></div>
-          <div className="btn subtract"></div>
-          <div className="btn add"></div>
+          <div className="btn equal" />
+          <div className="btn multiply" />
+          <div className="btn divide" />
+          <div className="btn subtract" />
+          <div className="btn add" />
         </div>
       </div>
-    )
+    );
     ```
-    
+
     </details>
+
 * Export default the calculator component at the bottom of `Calculator.js`.
 * Import the calculator component in `App.js`.
 * Add the calculator component in the return of the render method in `App.js`.
@@ -276,42 +278,46 @@ In this step we will create our `Calculator` component that will render in our c
 <summary> <code> Calculator.js </code> </summary>
 
 ```jsx
-import React, { Component } from 'react';
-import calculatorImg from '../../../../calculator.png';
+import React, { Component } from "react";
+import calculatorImg from "../../../../calculator.png";
 
 class Calculator extends Component {
   render() {
     return (
       <div id="calculator-container">
-        <input id="header-input"/>
+        <input id="header-input" />
         <h1 id="header"> Calculator </h1>
-        <img className="remove-highlight" src={calculatorImg} alt="calculator" />
+        <img
+          className="remove-highlight"
+          src={calculatorImg}
+          alt="calculator"
+        />
         <div id="calculator-mask" className="remove-highlight">
           <div className="output">
-            <span className="total"></span>
+            <span className="total" />
           </div>
 
-          <div className="btn clear"></div>
+          <div className="btn clear" />
 
-          <div className="btn zero"></div>
-          <div className="btn one"></div>
-          <div className="btn two"></div>
-          <div className="btn three"></div>
-          <div className="btn four"></div>
-          <div className="btn five"></div>
-          <div className="btn six"></div>
-          <div className="btn seven"></div>
-          <div className="btn eight"></div>
-          <div className="btn nine"></div>
+          <div className="btn zero" />
+          <div className="btn one" />
+          <div className="btn two" />
+          <div className="btn three" />
+          <div className="btn four" />
+          <div className="btn five" />
+          <div className="btn six" />
+          <div className="btn seven" />
+          <div className="btn eight" />
+          <div className="btn nine" />
 
-          <div className="btn equal"></div>
-          <div className="btn multiply"></div>
-          <div className="btn divide"></div>
-          <div className="btn subtract"></div>
-          <div className="btn add"></div>
+          <div className="btn equal" />
+          <div className="btn multiply" />
+          <div className="btn divide" />
+          <div className="btn subtract" />
+          <div className="btn add" />
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -325,10 +331,10 @@ export default Calculator;
 <summary> <code> App.js </code> </summary>
 
 ```jsx
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
 
-import Calculator from './components/Calculator/Calculator';
+import Calculator from "./components/Calculator/Calculator";
 
 class App extends Component {
   render() {
@@ -355,10 +361,10 @@ export default App;
 
 In this step we'll make our calculator header editable by the user using state and an `onChange` event in `Calculator.js`.
 
-Our header has two pieces : The visible text and an invisible input box.  We're going to wire up the header so that 
+Our header has two pieces : The visible text and an invisible input box. We're going to wire up the header so that
 when we click on it we can type in the invisible input box and the text part will update.
 
-VOCAB : class method = A class method is a method on a class.  It is a sibling to the constructor function.
+VOCAB : class method = A class method is a method on a class. It is a sibling to the constructor function.
 
 ### Instructions
 
@@ -370,8 +376,8 @@ VOCAB : class method = A class method is a method on a class.  It is a sibling t
   * This method should set the `header` property on state to the value of `val`. ( hint: `this.setState({...})` )
 * Add an `onChange` event to the input element with an id of `#header-input` and make its value be an arrow function that receives a parameter `e`. This parameter represents the changeEvent object.
 * Inside the arrow function, call the `updateHeader` method and pass in the value from the event: `e.target.value`.
-* Inside the h1 element `#header`, change `Calculator` to the value of the `header` property on state.  ( hint: `{this.state.xyz}` )
-* Test your header is working by clicking on it and typing in a new header. 
+* Inside the h1 element `#header`, change `Calculator` to the value of the `header` property on state. ( hint: `{this.state.xyz}` )
+* Test your header is working by clicking on it and typing in a new header.
 
 ### Solution
 
@@ -380,15 +386,15 @@ VOCAB : class method = A class method is a method on a class.  It is a sibling t
 <summary> <code> Calculator.js </code> </summary>
 
 ```jsx
-import React, { Component } from 'react';
-import calculatorImg from '../../../../calculator.png';
+import React, { Component } from "react";
+import calculatorImg from "../../../../calculator.png";
 
 class Calculator extends Component {
   constructor() {
     super();
     this.state = {
-      header: 'Calculator'
-    }
+      header: "Calculator"
+    };
   }
 
   updateHeader(val) {
@@ -398,36 +404,44 @@ class Calculator extends Component {
   render() {
     return (
       <div id="calculator-container">
-        <input id="header-input" onChange={ (e) => { this.updateHeader(e.target.value); }}/>
+        <input
+          id="header-input"
+          onChange={e => {
+            this.updateHeader(e.target.value);
+          }}
+        />
         <h1 id="header"> {this.state.header} </h1>
-        <img className="remove-highlight" src={calculatorImg} alt="calculator" />
+        <img
+          className="remove-highlight"
+          src={calculatorImg}
+          alt="calculator"
+        />
         <div id="calculator-mask" className="remove-highlight">
-
           <div className="output">
-            <span className="total"></span>
+            <span className="total" />
           </div>
 
-          <div className="btn clear"></div>
+          <div className="btn clear" />
 
-          <div className="btn zero"></div>
-          <div className="btn one"></div>
-          <div className="btn two"></div>
-          <div className="btn three"></div>
-          <div className="btn four"></div>
-          <div className="btn five"></div>
-          <div className="btn six"></div>
-          <div className="btn seven"></div>
-          <div className="btn eight"></div>
-          <div className="btn nine"></div>
+          <div className="btn zero" />
+          <div className="btn one" />
+          <div className="btn two" />
+          <div className="btn three" />
+          <div className="btn four" />
+          <div className="btn five" />
+          <div className="btn six" />
+          <div className="btn seven" />
+          <div className="btn eight" />
+          <div className="btn nine" />
 
-          <div className="btn equal"></div>
-          <div className="btn multiply"></div>
-          <div className="btn divide"></div>
-          <div className="btn subtract"></div>
-          <div className="btn add"></div>
+          <div className="btn equal" />
+          <div className="btn multiply" />
+          <div className="btn divide" />
+          <div className="btn subtract" />
+          <div className="btn add" />
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -444,7 +458,7 @@ You should now be able to click on the header and type in a new value for it.
 
 ### Summary
 
-In this step we will assign variables to state which we will need to keep track of information during run time. 
+In this step we will assign variables to state which we will need to keep track of information during run time.
 
 VOCAB: Run-time means the state of the code while the application is running, not while we're writing it.
 
@@ -489,7 +503,7 @@ In this step we will create a method called `setDisplay()` that will allow us to
 
 * Open `Calculator.js`. ( `src/components/Calculator/Calculator.js` )
 * Change the value of the span with the class of `.total` to the value of the `display` property on state. ( hint: `{ this.state.abc }` )
-* Create a `setDisplay` class method that takes a parameter called `num`. This method should then use `num` to update the value of `display` on state. 
+* Create a `setDisplay` class method that takes a parameter called `num`. This method should then use `num` to update the value of `display` on state.
 * Update buttons zero through nine to call the `setDisplay` method with the correct number in <b>string</b> format. You can tell which button is which number by its `class`.
 
 ### Solution
@@ -499,19 +513,19 @@ In this step we will create a method called `setDisplay()` that will allow us to
 <summary> <code> Calculator.js </code> </summary>
 
 ```jsx
-import React, { Component } from 'react';
-import calculatorImg from '../../../../calculator.png';
+import React, { Component } from "react";
+import calculatorImg from "../../../../calculator.png";
 
 class Calculator extends Component {
   constructor() {
     super();
     this.state = {
-      header: 'Calculator',
-      display: '0',
-      operator: '',
+      header: "Calculator",
+      display: "0",
+      operator: "",
       temp: 0,
-      resetDisplay: false,
-    }
+      resetDisplay: false
+    };
   }
 
   updateHeader(val) {
@@ -525,36 +539,94 @@ class Calculator extends Component {
   render() {
     return (
       <div id="calculator-container">
-        <input id="header-input" onChange={ (e) => { this.updateHeader(e.target.value); }}/>
+        <input
+          id="header-input"
+          onChange={e => {
+            this.updateHeader(e.target.value);
+          }}
+        />
         <h1 id="header"> {this.state.header} </h1>
-        <img className="remove-highlight" src={calculatorImg} alt="calculator" />
+        <img
+          className="remove-highlight"
+          src={calculatorImg}
+          alt="calculator"
+        />
         <div id="calculator-mask" className="remove-highlight">
-
           <div className="output">
-            <span className="total"> { this.state.display } </span>
+            <span className="total"> {this.state.display} </span>
           </div>
 
-          <div className="btn clear"></div>
+          <div className="btn clear" />
 
-          <div className="btn zero"   onClick={ () => { this.setDisplay('0'); } }></div>
-          <div className="btn one"    onClick={ () => { this.setDisplay('1'); } }></div>
-          <div className="btn two"    onClick={ () => { this.setDisplay('2'); } }></div>
-          <div className="btn three"  onClick={ () => { this.setDisplay('3'); } }></div>
-          <div className="btn four"   onClick={ () => { this.setDisplay('4'); } }></div>
-          <div className="btn five"   onClick={ () => { this.setDisplay('5'); } }></div>
-          <div className="btn six"    onClick={ () => { this.setDisplay('6'); } }></div>
-          <div className="btn seven"  onClick={ () => { this.setDisplay('7'); } }></div>
-          <div className="btn eight"  onClick={ () => { this.setDisplay('8'); } }></div>
-          <div className="btn nine"   onClick={ () => { this.setDisplay('9'); } }></div>
+          <div
+            className="btn zero"
+            onClick={() => {
+              this.setDisplay("0");
+            }}
+          />
+          <div
+            className="btn one"
+            onClick={() => {
+              this.setDisplay("1");
+            }}
+          />
+          <div
+            className="btn two"
+            onClick={() => {
+              this.setDisplay("2");
+            }}
+          />
+          <div
+            className="btn three"
+            onClick={() => {
+              this.setDisplay("3");
+            }}
+          />
+          <div
+            className="btn four"
+            onClick={() => {
+              this.setDisplay("4");
+            }}
+          />
+          <div
+            className="btn five"
+            onClick={() => {
+              this.setDisplay("5");
+            }}
+          />
+          <div
+            className="btn six"
+            onClick={() => {
+              this.setDisplay("6");
+            }}
+          />
+          <div
+            className="btn seven"
+            onClick={() => {
+              this.setDisplay("7");
+            }}
+          />
+          <div
+            className="btn eight"
+            onClick={() => {
+              this.setDisplay("8");
+            }}
+          />
+          <div
+            className="btn nine"
+            onClick={() => {
+              this.setDisplay("9");
+            }}
+          />
 
-          <div className="btn equal"></div>
-          <div className="btn multiply"></div>
-          <div className="btn divide"></div>
-          <div className="btn subtract"></div>
-          <div className="btn add"></div>
+          <div className="btn equal" />
+          <div className="btn multiply" />
+          <div className="btn divide" />
+          <div className="btn subtract" />
+          <div className="btn add" />
         </div>
       </div>
-    )
+    );
   }
 }
 
@@ -574,7 +646,7 @@ In this step we will be tweaking our calculator to handle certain scenarios. If 
 * Open `Calculator.js`. ( `src/components/Calculator/Calculator.js` )
 * Create a variable called `display` inside the `setDisplay` method.
 * Assign the new variable `display` a value:
-  * If `this.state.display` is `"0"` then `display` should equal `num` 
+  * If `this.state.display` is `"0"` then `display` should equal `num`
   * Otherwise `display` should equal `this.state.display` + `num`
 * Modify `this.setState` to update display:
   * If `this.state.display` is less than 13 characters then update with the new `display` variable.
@@ -613,7 +685,7 @@ In this step will be adding a `setOperator` method that will handle setting our 
   * Use "+" for addition
   * Use "-" for subtraction
   * Use "/" for division
-  * Use "*" for multiplication
+  * Use "\*" for multiplication
 * Add an if statement at the beginning of the `setOperator` method that checks if the operator has not been set. ( hint: look at the defualt value for `this.state.operator` )
 * Update the `operator`, `temp`, and `display` properties on state in the if statement in the `setOperator` method.
   * `temp` should equal the current `display` value on state parsed to an integer.
@@ -660,7 +732,7 @@ In this step we will be adding a calculate method that will preform the user sel
 * Update the `.btn equal` element to call the `calculate` method.
 * Add an if statement at the beginning of the `calculate` method that calls `return;` if the operator hasn't been set yet.
 * Create a variable called `result` after the if statement.
-* Switch the `operator` value on state, based on it's value ( "+", "-", "/", "*" ) perform the correct math operation and update the value of the `result` variable.
+* Switch the `operator` value on state, based on it's value ( "+", "-", "/", "\*" ) perform the correct math operation and update the value of the `result` variable.
 * Update the display property on state with `result` after the switch statement.
 
 ### Solution
@@ -705,7 +777,7 @@ calculate() {
 
 ### Summary
 
-In this step we will be making the clear button work. 
+In this step we will be making the clear button work.
 
 ### Instructions
 
