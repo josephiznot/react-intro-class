@@ -11,7 +11,11 @@ class Calculator extends Component {
       temp: 0,
       resetDisplay: false
     };
-    // this.setDisplay = this.setDisplay.bind(this);
+    this.setDisplay = this.setDisplay.bind(this);
+    this.updateHeader = this.updateHeader.bind(this);
+    this.setOperator = this.setOperator.bind(this);
+    this.calculate = this.calculate.bind(this);
+    this.clearDisplay = this.clearDisplay.bind(this);
   }
   updateHeader(val) {
     this.setState({
