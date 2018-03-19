@@ -40,23 +40,34 @@ class Calculator extends Component {
   calculate() {
     if (!this.state.operator) {
       return;
+    } else {
+      var result;
+      switch (this.state.operator) {
+        case "+":
+          result = this.state.temp + Number(this.state.display);
+          break;
+        case "-":
+          result = this.state.temp - Number(this.state.display);
+          break;
+        case "/":
+          result = this.state.temp / Number(this.state.display);
+          break;
+        case "*":
+          result = this.state.temp * Number(this.state.display);
+          break;
+      }
+      result = result.toString();
+      if (result.length < 13) {
+        this.setState({ display: Number(result) });
+      } else if (result.length > 13) {
+        this.setState({
+          display: result.slice(0, 9) + "e+" + result.slice(9).length
+        });
+      } else {
+        this.setState({ display: "ERROR" });
+      }
+      console.log(result.length);
     }
-    var result;
-    switch (this.state.operator) {
-      case "+":
-        result = this.state.temp + Number(this.state.display);
-        break;
-      case "-":
-        result = this.state.temp - Number(this.state.display);
-        break;
-      case "/":
-        result = this.state.temp / Number(this.state.display);
-        break;
-      case "*":
-        result = this.state.temp * Number(this.state.display);
-        break;
-    }
-    this.setState({ display: result });
   }
   clearDisplay() {
     this.setState({
